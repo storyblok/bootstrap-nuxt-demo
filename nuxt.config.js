@@ -1,8 +1,7 @@
 const StoryblokClient = require('storyblok-js-client')
 
 // !!! Change to your Storyblok preview token
-const YourStoryblokToken = 'qQTqOxTlxSrQiW7f9FANDwtt'
-const StoryblokToken = typeof window !== 'undefined' && window.Storyblok ? window.Storyblok.config.accessToken : YourStoryblokToken
+const StoryblokToken = 'qQTqOxTlxSrQiW7f9FANDwtt'
 
 module.exports = {
   mode: 'spa',
@@ -21,7 +20,7 @@ module.exports = {
       {route: '/'}
     ]
   },
-  /*  generate: {
+  /* generate: {
     routes() {
       let routes = []
 
