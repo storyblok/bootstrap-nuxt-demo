@@ -1,6 +1,6 @@
 # A Nuxtjs Website using Storyblok
 
-> Nuxt.js project
+> Nuxt.js demo project using Storyblok as CMS with the true live preview feature.
 
 ## Build Setup
 
@@ -22,9 +22,6 @@ $ npm run generate
 ## Setup
 
 1. [Register](https://app.storyblok.com/#!/signup) at Storyblok for free.
-2. Create a new Space and exchange the preview token with your own.
-3. Make sure to have the "Global" Content Entry defined: https://www.storyblok.com/tp/nuxt-js-multilanguage-website-tutorial#create-a-global-settings-content-item
-4. Setup your Blog Content: https://www.storyblok.com/tp/nuxt-js-multilanguage-website-tutorial#build-a-blog-section
-
+2. Create a new DEMO Space and exchange the preview token with your own in the file nuxt.config.js.
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js) and for the whole Setup you can have a look at [our step by step Guide](https://www.storyblok.com/tp/nuxt-js-multilanguage-website-tutorial)
