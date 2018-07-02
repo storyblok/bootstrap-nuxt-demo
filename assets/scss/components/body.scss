@@ -1,0 +1,21 @@
+.body__content {
+  flex: 1 0 auto;
+  width: 100%;
+
+  &:after {
+    content: '\00a0';
+    display: block;
+    height: 0px;
+    visibility: hidden;
+  }
+}
+
+.body__wrap {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.body__other {
+  flex: none;
+}

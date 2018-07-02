@@ -1,0 +1,64 @@
+.btn {
+  padding: $btn-padding;
+  background-color: $btn-bg-color;
+  color: $btn-text-color;
+  display: inline-block;
+  @include box-sizing(border-box);
+  text-decoration: none;
+  border: solid 2px $btn-bg-color;
+  @include border-radius(2px);
+
+  &.btn-empty {
+    background-color: transparent;
+    color: $btn-bg-color;
+  }
+
+  &:hover {
+    color: $btn-hover-text-color;
+    background-color: $btn-hover-bg-color;
+    border-color: $btn-hover-bg-color;
+  }
+
+  &.btn-black {
+    color: $btn-black-text-color;
+    background-color: $btn-black-bg-color;
+    border-color: $btn-black-bg-color;
+
+    &.btn-empty {
+      background-color: transparent;
+      color: $btn-black-bg-color;
+    }
+
+    &:hover {
+      color: $btn-black-hover-text-color;
+      background-color: $btn-black-hover-bg-color;
+      border-color: $btn-black-hover-bg-color;
+    }
+  }
+
+  &.btn-white {
+    color: $btn-white-text-color;
+    background-color: $btn-white-bg-color;
+    border-color: $btn-white-bg-color;
+
+    &.btn-empty {
+      background-color: transparent;
+      color: $btn-white-bg-color;
+    }
+
+    &:hover {
+      color: $btn-white-hover-text-color;
+      background-color: $btn-white-hover-bg-color;
+      border-color: $btn-white-hover-bg-color;
+    }
+  }
+
+  &.btn-shadow {
+    @include froala-box-shadow($btn-shadow);
+  }
+
+  &.btn-round {
+    @include border-radius(20px);
+    min-width: 150px;
+  }
+}

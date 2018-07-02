@@ -1,0 +1,40 @@
+// Colors.
+$primary-color: #528bff;
+$white: #FFFFFF;
+$black: #000000;
+$font-color: #444444;
+
+// Sizes.
+$font-size: 16px;
+$line-height: 1.5;
+$heading-margin: 0.7em;
+
+// Block
+$block-padding: 100px;
+
+// Buttons.
+$btn-padding: 9px 26px;
+$btn-bg-color: $primary-color;
+$btn-text-color: #FFF;
+$btn-hover-text-color: #FFF;
+$btn-hover-bg-color: darken($btn-bg-color, 10%);
+
+$btn-white-bg-color: $white;
+$btn-white-text-color: $black;
+$btn-white-hover-text-color: $btn-white-text-color;
+$btn-white-hover-bg-color: #DEDEDE;
+
+$btn-black-bg-color: $black;
+$btn-black-text-color: $white;
+$btn-black-hover-text-color: #FFF;
+$btn-black-hover-bg-color: lighten($btn-black-bg-color, 5%);
+
+$btn-border-radius: 10px;
+
+$btn-shadow: 1;
+
+@import 'elements/body.scss';
+@import 'elements/p.scss';
+@import 'components/body.scss';
+@import 'components/fdb-block.scss';
+@import 'components/btn.scss';

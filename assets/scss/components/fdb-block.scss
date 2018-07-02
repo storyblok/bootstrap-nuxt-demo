@@ -1,0 +1,343 @@
+@mixin box-sizing($sizing) {
+  box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
+  -webkit-box-sizing: $sizing;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin box-sizing($val) {
+  box-sizing: $val;
+  -moz-box-sizing: $val;
+  -webkit-box-sizing: $val;
+}
+
+@mixin box-shadow ($shadow: none) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow:    $shadow;
+  box-shadow:         $shadow;
+}
+
+@mixin font-smoothing($value: on) {
+  @if $value == on {
+    -webkit-font-smoothing:   antialiased;
+    -moz-osx-font-smoothing:  grayscale;
+  }
+
+  @else {
+    -webkit-font-smoothing:   subpixel-antialiased;
+    -moz-osx-font-smoothing:  auto;
+  }
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin froala-box-shadow ($level: 1, $direction: 1) {
+  $shadow: none;
+
+  @if $level == 1 {
+    $shadow: 0 ($direction * 1px) 3px rgba(0,0,0,0.12), 0 ($direction * 1px) 2px rgba(0,0,0,0.24);
+  }
+  @else if $level == 2 {
+    $shadow: 0 ($direction * 3px) 6px rgba(0,0,0,0.16), 0 ($direction * 2px) 4px rgba(0,0,0,0.23);
+  }
+  @else if $level == 3 {
+    $shadow: 0 ($direction * 5px) 8px rgba(0,0,0,0.19), 0 ($direction * 4px) 6px rgba(0,0,0,0.23);
+  }
+  @else if $level == 4 {
+    $shadow: 0 ($direction * 8px) 12px rgba(0,0,0,0.25), 0 ($direction * 6px) 6px rgba(0,0,0,0.22);
+  }
+  @else if $level >= 5 {
+    $shadow: 0 ($direction * 10px) 16px rgba(0,0,0,0.30), 0 ($direction * 6px) 8px rgba(0,0,0,0.22);
+  }
+
+  @include box-shadow($shadow);
+}
+
+.fdb-block {
+  font-family: 'Roboto', sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  text-rendering: optimizelegibility;
+  padding: $block-padding 0;
+  color: $font-color;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  background-color: $white;
+  border-bottom: solid 1px #EEE;
+
+  &.fdb-viewport {
+    min-height: calc(100% - 2 * #{$block-padding});
+
+    .container {
+      min-height: calc(100% - 2 * #{$block-padding});
+    }
+  }
+
+  &.fdb-image-bg {
+    color: mix($black, $white, 5%);
+  }
+
+  .fdb-box {
+    background: $white;
+    color: $font-color;
+    padding: 60px 40px;
+    border-radius: 4px;
+    @include border-radius(4px);
+    @include froala-box-shadow(1);
+    overflow: hidden;
+  }
+
+  .fdb-touch {
+    border-top: solid 5px $primary-color;
+  }
+
+  // Headings
+  h1, .text-h1,
+  h2, .text-h2,
+  h3, .text-h3,
+  h4, .text-h4,
+  h5, .text-h5,
+  h6, .text-h6 {
+    margin-bottom: .5em;
+    margin-top: .3em;
+    font-weight: 400;
+  }
+
+  h1, .text-h1 {
+    font-size: 2.75rem;
+  }
+
+  h2, .text-h2 {
+    font-size: 2rem;
+  }
+
+  h3, .text-h3 {
+    font-size: 1.125rem;
+  }
+
+  h4, .text-h4 {
+    font-size: 1rem;
+  }
+
+  h5, .text-h5 {
+    font-size: 0.9rem;
+  }
+
+  h6, .text-h6 {
+    font-size: 0.75rem;
+  }
+
+  .card-header {
+    margin: 0;
+  }
+
+  .font-weight-light {
+    font-weight: 300;
+  }
+
+  img {
+    @include border-radius(4px);
+
+    + p, + h3, + h4 {
+      margin-top: 20px;
+    }
+
+    + h1, + h2 {
+      margin-top: 40px;
+    }
+  }
+
+  .col-fill-left {
+    width: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    + div {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .col-fill-right {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+
+    + div {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  img.fdb-icon {
+    width: auto;
+    width: 60px;
+  }
+
+  img.fdb-icon-round {
+    width: auto;
+    width: 60px;
+    @include border-radius(60px);
+  }
+
+  .row-100 {
+    height: 100px;
+    width: 100%;
+  }
+
+  .row-50 {
+    height: 50px;
+    width: 100%;
+  }
+
+  .row-70 {
+    height: 70px;
+    width: 100%;
+  }
+}
+
+footer {
+  padding: 30px 0 !important;
+
+  &.footer-large {
+    padding: 100px 0 !important
+  }
+
+  .flex-column {
+    .nav-link {
+      padding-left: 0;
+    }
+  }
+
+  &.bg-dark {
+    background: #2d313c;
+    color: mix($black, $white, 5%);
+
+    a {
+      color: mix($black, $white, 5%);
+    }
+  }
+
+  a {
+    color: $font-color;
+  }
+}
+
+header {
+  background-color: $white;
+
+  .navbar-nav {
+    a.nav-link {
+      color: #777;
+
+      &:hover {
+        color: $primary-color;
+      }
+    }
+
+    .active {
+      a.nav-link {
+        color: $font-color;
+      }
+    }
+  }
+
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
+
+  &.bg-dark {
+    .navbar-nav {
+      a.nav-link {
+        color: #dcdcdc;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      .active {
+        a.nav-link {
+          color: $white;
+        }
+      }
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#fff' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+  }
+}
+
+header + header {
+  border-top: solid 1px #EEE;
+}
+
+.bg-dark {
+  background-color: #2d313c;
+  color: mix($black, $white, 5%);
+}
+
+.bg-gray {
+  background-color: #fafafa;
+  color: $font-color;
+}
+
+.br {
+  @include border-radius(4px);
+  overflow: hidden;
+}
+
+.br-0 {
+  @include border-radius(0 !important);
+}
+
+.heart {
+  color: #df584e;
+  font-weight: bold;
+}
+
+*.text-light {
+  font-weight: 300 !important;
+}
+
+.sl-1 {
+  @include froala-box-shadow(1);
+  z-index: 2;
+}
+
+table {
+  tr.no-border {
+    th, td {
+      border-top: 0;
+    }
+  }
+}
