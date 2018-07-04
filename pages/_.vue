@@ -52,7 +52,20 @@ export default {
   },
   asyncData (context) {
     // Check if we are in the editor mode
-    let version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    let editMode = false
+
+    if (context.query._storyblok || context.isDev || (window && window.localStorage.getItem('_storyblok_draft_mode'))) {
+      if (window) {
+        window.localStorage.setItem('_storyblok_draft_mode', '1')
+        if (context.query._storyblok_mode == 'live') {
+          window.localStorage.removeItem('_storyblok_draft_mode')
+        }
+      }
+
+      editMode = true
+    }
+
+    let version = editMode ? 'draft' : 'published'
     let path = context.route.path == '/' ? 'home' : context.route.path
 
     // Load the JSON from the API
