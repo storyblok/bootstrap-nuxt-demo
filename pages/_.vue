@@ -57,7 +57,7 @@ export default {
     if (context.query._storyblok || context.isDev || (window && window.localStorage.getItem('_storyblok_draft_mode'))) {
       if (window) {
         window.localStorage.setItem('_storyblok_draft_mode', '1')
-        if (context.query._storyblok_mode == 'live') {
+        if (window.location == window.parent.location) {
           window.localStorage.removeItem('_storyblok_draft_mode')
         }
       }
