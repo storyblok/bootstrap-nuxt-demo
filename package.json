@@ -30,6 +30,10 @@
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
     "eslint-plugin-standard": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-blok": "^1.1.3",
+    "gulp-rename": "^1.3.0",
+    "gulp-replace": "^1.0.0",
     "node-sass": "^4.7.2",
     "sass-loader": "^6.0.6"
   }
