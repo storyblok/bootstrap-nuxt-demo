@@ -11,5 +11,4 @@ npm-debug.log
 dist
 
 deploy
-gulpfile.js
 token.js
