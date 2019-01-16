@@ -20,8 +20,8 @@ gulp.task('copy:js', function () {
 gulp.task('copy:html', function () {
   return gulp.src('dist/index.html')
     .pipe(replace(
-      '<script data-n-head="true" src="//app.storyblok.com/f/storyblok-latest.js?t=qQTqOxTlxSrQiW7f9FANDwtt"></script>',
-      '<script type="text/javascript">var StoryblokToken = \'{{ private_token }}\'</script><script src="//app.storyblok.com/f/storyblok-latest.js?t=\'{{ private_token }}\'" data-n-head="true"></script>'
+      '<title data-n-head="true">mywebsite</title>',
+      '<title data-n-head="true">mywebsite</title><script type="text/javascript">var StoryblokToken = \'{{ private_token }}\'</script>'
     ))
     .pipe(replace('<script type="text/javascript" src="/_nuxt/', '<script src="{{ \'assets/_nuxt/'))
     .pipe(replace('<link rel="preload" href="/_nuxt/', '<link href="{{ \'assets/_nuxt/'))
