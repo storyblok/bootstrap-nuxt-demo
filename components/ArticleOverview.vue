@@ -53,7 +53,8 @@
             <h5 class="card-header">Authors</h5>
             <div class="card-body">
               <div class="d-flex align-items-center mb-2"
-                   v-for="author in authors">
+                   v-for="author in authors"
+                   :key="author.id">
                 <div class="mr-2">
                   <img height="30" :src="author.content.image" />
                 </div>
