@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer maintained.
+> For a current Nuxt + Storyblok starter, use [blueprint-core-nuxt](https://github.com/storyblok/blueprint-core-nuxt).
+
 # A Nuxtjs Website using Storyblok
 
 > Nuxt.js demo project using Storyblok as CMS with the true live preview feature.
